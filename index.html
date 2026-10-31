@@ -141,7 +141,7 @@ dialog{border:0;border-radius:14px;max-width:420px;padding:1.5rem}dialog::backdr
    <div class="cta"><a class="b b--c" href="#productos" data-i="c1"></a><a class="b b--o" href="#historia" data-i="c2"></a></div>
   </div>
   <div class="foto"><span class="masa" style="--c2:#f0c040"></span>
-   <img src="https://premier.com.co/wp-content/uploads/2020/11/arepa-paisa.webp" alt="Arepas blanches colombiennes" width="420" height="525" fetchpriority="high" onerror="this.hidden=true"></div>
+   <img referrerpolicy="no-referrer" src="img/hero.jpg" data-alt="https://premier.com.co/wp-content/uploads/2020/11/arepa-paisa.webp" alt="Arepas blanches colombiennes" width="420" height="525" fetchpriority="high" onerror="fallo(this)"></div>
  </div>
 </section>
 
@@ -158,7 +158,7 @@ dialog{border:0;border-radius:14px;max-width:420px;padding:1.5rem}dialog::backdr
  <div class="w">
   <div><h2 data-i="ht"></h2><p data-i="hp"></p>
    <div class="chips"><span data-i="k1"></span><span data-i="k2"></span><span data-i="k3"></span></div></div>
-  <figure class="hfoto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSku6drATKlUFpS1c95kBehXaGkJohNrn-NbopTao3m95B_j0xr_wuLhloQ&s=10" alt="Petit-déjeuner colombien" width="400" height="300" loading="lazy" decoding="async" onerror="this.hidden=true"><figcaption><h3 style="font-size:clamp(1.8rem,3vw,2.4rem)" data-i="hq"></h3></figcaption></figure>
+  <figure class="hfoto"><img referrerpolicy="no-referrer" src="img/desayuno.jpg" data-alt="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSku6drATKlUFpS1c95kBehXaGkJohNrn-NbopTao3m95B_j0xr_wuLhloQ&s=10" alt="Petit-déjeuner colombien" width="400" height="300" loading="lazy" decoding="async" onerror="fallo(this)"><figcaption><h3 style="font-size:clamp(1.8rem,3vw,2.4rem)" data-i="hq"></h3></figcaption></figure>
  </div>
 </section>
 
@@ -221,21 +221,21 @@ dialog{border:0;border-radius:14px;max-width:420px;padding:1.5rem}dialog::backdr
 
 <script>
 // ===== Catálogo: EDITA aquí nombres, descripciones y PRECIOS (en euros) =====
-// img = enlace a la foto · f = forma de respaldo (redonda | luna | rosca) · c = color de respaldo
+// img = [foto local en la carpeta img/, enlace de respaldo de internet] · f = forma de respaldo (redonda | luna | rosca) · c = color de respaldo
 const productos = [
-  { id: 1, precio: 7.90,  f: "redonda", c: "#f0c040", best: 1, img: "https://premier.com.co/wp-content/uploads/2024/04/arepa-de-chocolo-o-choclo.webp",
+  { id: 1, precio: 7.90,  f: "redonda", c: "#f0c040", best: 1, img: ["img/arepa-choclo.jpg", "https://premier.com.co/wp-content/uploads/2024/04/arepa-de-chocolo-o-choclo.webp"],
     n: { fr: "Arepas de choclo (x6)", es: "Arepas de choclo (x6)" },
     d: { fr: "Maïs tendre, légèrement sucrées, idéales avec du fromage.", es: "Maíz tierno, ligeramente dulces, ideales con queso." } },
-  { id: 2, precio: 8.90,  f: "redonda", c: "#e8a93a", img: "https://i.ytimg.com/vi/ZM3SiWJFXa8/maxresdefault.jpg",
+  { id: 2, precio: 8.90,  f: "redonda", c: "#e8a93a", img: ["img/arepa-boyacense.jpg", "https://i.ytimg.com/vi/ZM3SiWJFXa8/maxresdefault.jpg"],
     n: { fr: "Arepas boyacenses au fromage (x4)", es: "Arepas boyacenses con queso (x4)" },
     d: { fr: "Fourrées de fromage fondant, une spécialité de Boyacá.", es: "Rellenas de queso fundido, especialidad de Boyacá." } },
-  { id: 3, precio: 11.90, f: "luna",    c: "#d9902a", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZUH7JMaIEWgoofF8ZbWlXcxFS5XNso-zXGAKqUZ2IjfBediRT0cg2Dpn&s=10",
+  { id: 3, precio: 11.90, f: "luna",    c: "#d9902a", img: ["img/empanadas.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZUH7JMaIEWgoofF8ZbWlXcxFS5XNso-zXGAKqUZ2IjfBediRT0cg2Dpn&s=10"],
     n: { fr: "Empanadas vallecaucanas (x12)", es: "Empanadas vallecaucanas (x12)" },
     d: { fr: "Chaussons de maïs dorés, à la garniture savoureuse.", es: "Empanadas de maíz doradas, con relleno sabroso." } },
-  { id: 4, precio: 6.90,  f: "rosca",   c: "#eab84a", best: 1, img: "https://cdn.colombia.com/gastronomia/2011/08/05/pandebono-1638.gif",
+  { id: 4, precio: 6.90,  f: "rosca",   c: "#eab84a", best: 1, img: ["img/pandebono.jpg", "https://cdn.colombia.com/gastronomia/2011/08/05/pandebono-1638.gif"],
     n: { fr: "Pandebono (x8)", es: "Pandebono (x8)" },
     d: { fr: "Petits pains moelleux au fromage et à l’amidon de manioc.", es: "Panecillos suaves de queso y almidón de yuca." } },
-  { id: 5, precio: 7.50,  f: "redonda", c: "#e2a23b", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA9uKiWWGJSMwvwlKamiErVPns9BFG1QsLVfgAfMf18RQOw21DJFM-jJFq&s=10",
+  { id: 5, precio: 7.50,  f: "redonda", c: "#e2a23b", img: ["img/bunuelos.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA9uKiWWGJSMwvwlKamiErVPns9BFG1QsLVfgAfMf18RQOw21DJFM-jJFq&s=10"],
     n: { fr: "Buñuelos (x12)", es: "Buñuelos (x12)" },
     d: { fr: "Beignets de fromage croustillants dehors, moelleux dedans.", es: "Buñuelos de queso crocantes por fuera y suaves por dentro." } }
 ];
@@ -295,6 +295,9 @@ function avisar(txt) {
 
 // Si una foto no carga, se muestra la masa dibujada con CSS
 function fallo(img) {
+  const sig = (img.dataset.alt || "").split(" ").filter(Boolean);
+  if (sig.length) { img.dataset.alt = sig.slice(1).join(" "); img.src = sig[0]; return; }
+  if (!img.dataset.f) { img.hidden = true; return; }
   const s = document.createElement("span");
   s.className = "masa masa--" + img.dataset.f;
   s.style.setProperty("--c2", img.dataset.c);
@@ -305,7 +308,7 @@ function pintarCatalogo() {
   $("catalogo").innerHTML = productos.map(p => {
     return `<article class="card">
       <div class="card__f">${p.best ? `<span class="pill">${T[lang].best}</span>` : ""}
-        <img src="${p.img}" alt="${p.n[lang]}" width="400" height="300" loading="lazy" decoding="async"
+        <img referrerpolicy="no-referrer" src="${p.img[0]}" data-alt="${p.img.slice(1).join(' ')}" alt="${p.n[lang]}" width="400" height="300" loading="lazy" decoding="async"
           data-f="${p.f}" data-c="${p.c}" onerror="fallo(this)"></div>
       <div class="card__b"><h3>${p.n[lang]}</h3><p>${p.d[lang]}</p>
         <div class="card__p"><strong>${eur(p.precio)}</strong>
