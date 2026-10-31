@@ -1,1 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tienda de Juan Dotor · Arepas colombiennes artisanales</title>
+<meta name="description" content="Arepas, pandebono, empanadas et buñuelos de Colombie, faits main et livrés en France. Découvrez le goût authentique de la Colombie.">
+<meta property="og:title" content="Tienda de Juan Dotor · Arepas colombiennes">
+<meta property="og:description" content="Masas de maïs colombiennes faites main, livrées en France.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"Tienda de Juan Dotor","description":"Arepas et masas de maïs colombiennes artisanales","priceRange":"€€"}</script>
+<style>
+:root{--g:#B83245;--c:#F5DFA8;--v:#526B45;--m:#FFF9EF;--k:#493329;--l:rgba(73,51,41,.15)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--m);color:var(--k);font:400 1rem/1.65 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;line-height:1.1;margin:0}
+img{max-width:100%;display:block}a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+section{padding:4.5rem 0}
+h2{font-size:clamp(2rem,4vw,2.8rem);color:var(--g);margin-bottom:.6rem}
+.sub{max-width:60ch;margin:0 0 2rem}
+:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.b{display:inline-block;border:2px solid var(--g);background:var(--g);color:#fff;border-radius:999px;padding:.65rem 1.4rem;font:500 .95rem Jost,sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,background .2s}
+.b:hover{transform:translateY(-2px);background:#9c2639}
+.b--c{background:var(--c);border-color:var(--c);color:var(--k)}.b--c:hover{background:#fff}
+.b--o{background:transparent;border-color:var(--c);color:var(--c)}.b--o:hover{background:rgba(245,223,168,.15)}
+/* Cabecera */
+.top{position:sticky;top:0;z-index:30;background:rgba(255,249,239,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--l)}
+.top .w{display:flex;align-items:center;gap:1rem;min-height:68px}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;margin-right:auto}
+.logo b{display:block;font:700 1.35rem/1 "Cormorant Garamond",serif;color:var(--g)}
+.logo small{display:block;font-size:.72rem;color:var(--v)}
+.nav{display:none;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:.25rem;background:var(--m);padding:1rem 1.25rem;border-bottom:1px solid var(--l)}
+.nav.on{display:flex}
+.nav a{text-decoration:none;font-weight:500;padding:.4rem 0}.nav a:hover{color:var(--g)}
+.lang button{border:1px solid var(--l);background:none;color:var(--k);padding:.25rem .55rem;font:500 .8rem Jost,sans-serif;cursor:pointer}
+.lang button:first-child{border-radius:6px 0 0 6px}.lang button:last-child{border-radius:0 6px 6px 0}
+.lang [aria-pressed=true]{background:var(--k);color:var(--m)}
+.cartbtn{position:relative;border:0;background:none;color:var(--k);cursor:pointer;padding:.3rem}
+#contador{position:absolute;top:-4px;right:-6px;background:var(--g);color:#fff;border-radius:999px;min-width:20px;height:20px;font-size:.72rem;display:grid;place-items:center}
+.burger{border:0;background:none;font-size:1.6rem;cursor:pointer;color:var(--k)}
+.top .b{display:none;padding:.45rem 1.1rem}
+@media(min-width:900px){.nav{display:flex;position:static;flex-direction:row;gap:1.5rem;padding:0;border:0;background:none}.burger{display:none}.top .b{display:inline-block}}
+/* Hero */
+.hero{background:var(--k);color:var(--m);padding:3rem 0 4rem}
+.hero .w{display:grid;gap:2.5rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6vw,4.2rem);margin:.8rem 0 1rem}
+.hero p{max-width:48ch;color:#f1e6d3}
+.tag{display:inline-block;color:var(--c);border:1px solid var(--c);border-radius:999px;padding:.2rem .9rem;font-size:.85rem}
+.cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.6rem}
+.hero__t{animation:ent .8s both}
+@keyframes ent{from{opacity:0;transform:translateY(14px)}}
+.foto{position:relative;aspect-ratio:4/5;max-width:420px;width:100%;margin:0 auto;border-radius:999px 999px 16px 16px;overflow:hidden;background:linear-gradient(160deg,var(--c),#e3b95f);display:grid;place-items:center}
+.foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.foto .masa{width:55%;height:auto;aspect-ratio:1}
+@media(min-width:860px){.hero .w{grid-template-columns:1.1fr .9fr}}
+/* Masas dibujadas (respaldo si una foto no carga) */
+.masa{display:block;width:84px;height:84px;border-radius:50%;background:radial-gradient(circle at 30% 28%,rgba(255,255,255,.35) 0 14%,transparent 15%),radial-gradient(circle at 68% 62%,rgba(120,60,10,.28) 0 7%,transparent 8%),var(--c2,#e8b53c);box-shadow:inset 0 -8px 0 rgba(90,50,10,.18)}
+.masa--luna{width:104px;height:54px;border-radius:104px 104px 8px 8px}
+.masa--rosca{background:radial-gradient(circle,var(--c) 0 20%,transparent 21%),var(--c2,#e8b53c)}
+/* Catálogo */
+.grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.card{background:#fff;border:1px solid var(--l);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(73,51,41,.14)}
+.card__f{position:relative;aspect-ratio:4/3;background:var(--c);display:grid;place-items:center;overflow:hidden}
+.card__f img{width:100%;height:100%;object-fit:cover}
+.pill{position:absolute;top:.7rem;left:.7rem;background:var(--g);color:#fff;font-size:.78rem;border-radius:999px;padding:.1rem .7rem}
+.card__b{padding:1.1rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card h3{font-size:1.5rem}.card p{margin:0;font-size:.95rem}
+.card__p{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:.5rem;padding-top:.6rem}
+.card__p strong{font-size:1.3rem;color:var(--g)}
+/* Secciones */
+.hist{background:var(--c)}.hist h2{color:var(--k)}
+.hist .w{display:grid;gap:2rem}
+.hfoto{margin:0}.hfoto img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:14px;margin-bottom:1rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.2rem}
+.chips span{background:var(--m);border-radius:999px;padding:.35rem 1rem;font-weight:500}
+@media(min-width:860px){.hist .w{grid-template-columns:1.2fr .8fr;align-items:center}}
+.ben{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.ben div{border-top:3px solid var(--v);padding-top:1rem}.ben h3{font-size:1.5rem;color:var(--v)}
+.testi{background:var(--v);color:#fff}.testi h2{color:var(--c)}
+.testi blockquote{margin:0;padding:1.3rem;background:rgba(255,255,255,.1);border-radius:12px}
+.testi cite{display:block;margin-top:.7rem;color:var(--c);font-style:normal;font-size:.9rem}
+.promo{background:var(--g);color:#fff;text-align:center;padding:2.2rem 0}
+.promo p{margin:0;font:700 clamp(1.3rem,3vw,1.9rem)/1.3 "Cormorant Garamond",serif}
+details{border-bottom:1px solid var(--l);padding:.9rem 0}
+summary{cursor:pointer;font-weight:500}details p{margin:.5rem 0 0}
+/* Pie */
+footer{background:var(--k);color:#e9dcc6;padding:3rem 0 1.5rem}
+footer .w{display:grid;gap:2rem;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer h3{color:var(--c);font-size:1.4rem;margin-bottom:.5rem}
+footer a{display:block;text-decoration:none;padding:.15rem 0}footer a:hover{color:var(--c)}
+.copy{text-align:center;font-size:.85rem;margin-top:2rem;opacity:.8}
+/* Carrito lateral */
+.velo{position:fixed;inset:0;background:rgba(0,0,0,.45);opacity:0;visibility:hidden;transition:opacity .25s;z-index:40}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(380px,100%);background:#fff;z-index:50;padding:1.3rem;display:flex;flex-direction:column;transform:translateX(100%);visibility:hidden;transition:transform .3s,visibility .3s}
+.open .velo{opacity:1;visibility:visible}.open .drawer{transform:none;visibility:visible}
+.drawer h2{font-size:1.9rem}.drawer ul{list-style:none;margin:1rem 0;padding:0;overflow:auto;flex:1}
+.item{display:grid;grid-template-columns:1fr auto;gap:.2rem .6rem;padding:.7rem 0;border-bottom:1px solid var(--l)}
+.item__p{text-align:right}.q{display:flex;align-items:center;gap:.5rem}
+.q button{width:28px;height:28px;border:1px solid var(--k);background:#fff;border-radius:6px;cursor:pointer}
+.total{display:flex;justify-content:space-between;font-size:1.3rem;margin:.6rem 0}
+.acc{display:flex;gap:.5rem;flex-wrap:wrap}.acc .b{flex:1;padding:.55rem .8rem}
+.b--s{background:#fff;color:var(--g)}.b--s:hover{background:var(--c)}
+#mensaje{min-height:1.5rem;color:var(--v);font-weight:500;margin:.6rem 0 0}
+.x{align-self:flex-end;border:0;background:none;font-size:1.5rem;cursor:pointer}
+dialog{border:0;border-radius:14px;max-width:420px;padding:1.5rem}dialog::backdrop{background:rgba(0,0,0,.5)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="top">
+ <div class="w">
+  <a class="logo" href="#inicio" aria-label="Tienda de Juan Dotor">
+   <svg width="38" height="38" viewBox="0 0 38 38" aria-hidden="true"><circle cx="19" cy="19" r="17" fill="#F5DFA8" stroke="#B83245" stroke-width="2"/><circle cx="14" cy="14" r="3" fill="#fff" opacity=".6"/><circle cx="24" cy="23" r="2.5" fill="#B83245" opacity=".5"/></svg>
+   <span><b>Juan Dotor</b><small data-i="tag"></small></span>
+  </a>
+  <nav class="nav" id="nav" aria-label="Menu">
+   <a href="#inicio" data-i="n1"></a><a href="#productos" data-i="n2"></a><a href="#historia" data-i="n3"></a><a href="#contacto" data-i="n4"></a>
+  </nav>
+  <div class="lang" role="group" aria-label="Langue / Idioma"><button type="button" data-lang="fr" aria-label="Français">FR</button><button type="button" data-lang="es" aria-label="Español">ES</button></div>
+  <button class="cartbtn" id="abrir" type="button" aria-label="Panier / Carrito">
+   <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 8h12l-1 12H7L6 8Z"/><path d="M9 8a3 3 0 0 1 6 0"/></svg><span id="contador">0</span>
+  </button>
+  <a class="b" href="#productos" data-i="buy"></a>
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu">☰</button>
+ </div>
+</header>
 
+<main>
+<section class="hero" id="inicio">
+ <div class="w">
+  <div class="hero__t">
+   <span class="tag" data-i="badge"></span>
+   <h1 data-i="h1"></h1>
+   <p data-i="sl"></p>
+   <div class="cta"><a class="b b--c" href="#productos" data-i="c1"></a><a class="b b--o" href="#historia" data-i="c2"></a></div>
+  </div>
+  <div class="foto"><span class="masa" style="--c2:#f0c040"></span>
+   <img src="https://premier.com.co/wp-content/uploads/2020/11/arepa-paisa.webp" alt="Arepas blanches colombiennes" width="420" height="525" fetchpriority="high" onerror="this.hidden=true"></div>
+ </div>
+</section>
+
+<section id="productos">
+ <div class="w">
+  <h2 data-i="pt"></h2><p class="sub" data-i="ps"></p>
+  <div class="grid" id="catalogo"></div>
+ </div>
+</section>
+
+<section class="promo" aria-label="Promotion"><div class="w"><p data-i="promo"></p></div></section>
+
+<section class="hist" id="historia">
+ <div class="w">
+  <div><h2 data-i="ht"></h2><p data-i="hp"></p>
+   <div class="chips"><span data-i="k1"></span><span data-i="k2"></span><span data-i="k3"></span></div></div>
+  <figure class="hfoto"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSku6drATKlUFpS1c95kBehXaGkJohNrn-NbopTao3m95B_j0xr_wuLhloQ&s=10" alt="Petit-déjeuner colombien" width="400" height="300" loading="lazy" decoding="async" onerror="this.hidden=true"><figcaption><h3 style="font-size:clamp(1.8rem,3vw,2.4rem)" data-i="hq"></h3></figcaption></figure>
+ </div>
+</section>
+
+<section>
+ <div class="w"><h2 data-i="bt"></h2>
+  <div class="ben">
+   <div><h3 data-i="b1t"></h3><p data-i="b1p"></p></div>
+   <div><h3 data-i="b2t"></h3><p data-i="b2p"></p></div>
+   <div><h3 data-i="b3t"></h3><p data-i="b3p"></p></div>
+  </div>
+ </div>
+</section>
+
+<section class="testi">
+ <div class="w"><h2 data-i="tt"></h2>
+  <!-- Témoignages d'exemple : remplace-los por opiniones reales -->
+  <div class="ben">
+   <blockquote><span data-i="t1"></span><cite>Camille D., Lyon</cite></blockquote>
+   <blockquote><span data-i="t2"></span><cite>Julien M., Paris</cite></blockquote>
+   <blockquote><span data-i="t3"></span><cite>Sofía R., Bordeaux</cite></blockquote>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="w" style="max-width:780px"><h2 data-i="ft"></h2>
+  <details><summary data-i="fq1"></summary><p data-i="fa1"></p></details>
+  <details><summary data-i="fq2"></summary><p data-i="fa2"></p></details>
+  <details><summary data-i="fq3"></summary><p data-i="fa3"></p></details>
+ </div>
+</section>
+</main>
+
+<footer id="contacto">
+ <div class="w">
+  <div><h3>Tienda de Juan Dotor</h3><p data-i="cp"></p><a href="mailto:contact@example.com">contact@example.com</a></div>
+  <div><h3 data-i="so"></h3>
+   <a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a>
+   <a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a>
+   <a href="https://www.tiktok.com/" target="_blank" rel="noopener">TikTok</a></div>
+  <div><h3 data-i="pol"></h3>
+   <a href="#" data-pol="1" data-i="p1"></a><a href="#" data-pol="2" data-i="p2"></a><a href="#" data-pol="3" data-i="p3"></a></div>
+ </div>
+ <p class="copy">© 2026 Tienda de Juan Dotor · <span data-i="orig"></span></p>
+</footer>
+
+<div id="shell">
+ <div class="velo" id="velo"></div>
+ <aside class="drawer" id="drawer" aria-labelledby="t-carrito">
+  <button class="x" id="cerrar" type="button" aria-label="Fermer / Cerrar">×</button>
+  <h2 id="t-carrito" data-i="cart"></h2>
+  <ul id="lista-carrito"></ul>
+  <p id="vacio" data-i="empty"></p>
+  <div class="total"><span data-i="total"></span><strong id="total">0 €</strong></div>
+  <div class="acc"><button type="button" class="b b--s" id="vaciar" data-i="clear"></button><button type="button" class="b" id="finalizar" data-i="fin"></button></div>
+  <p id="mensaje" role="status"></p>
+ </aside>
+</div>
+<dialog id="dlg"><h3 id="dlg-t"></h3><p id="dlg-p"></p><button type="button" class="b" id="dlg-x">OK</button></dialog>
+
+<script>
+// ===== Catálogo: EDITA aquí nombres, descripciones y PRECIOS (en euros) =====
+// img = enlace a la foto · f = forma de respaldo (redonda | luna | rosca) · c = color de respaldo
+const productos = [
+  { id: 1, precio: 7.90,  f: "redonda", c: "#f0c040", best: 1, img: "https://premier.com.co/wp-content/uploads/2024/04/arepa-de-chocolo-o-choclo.webp",
+    n: { fr: "Arepas de choclo (x6)", es: "Arepas de choclo (x6)" },
+    d: { fr: "Maïs tendre, légèrement sucrées, idéales avec du fromage.", es: "Maíz tierno, ligeramente dulces, ideales con queso." } },
+  { id: 2, precio: 8.90,  f: "redonda", c: "#e8a93a", img: "https://i.ytimg.com/vi/ZM3SiWJFXa8/maxresdefault.jpg",
+    n: { fr: "Arepas boyacenses au fromage (x4)", es: "Arepas boyacenses con queso (x4)" },
+    d: { fr: "Fourrées de fromage fondant, une spécialité de Boyacá.", es: "Rellenas de queso fundido, especialidad de Boyacá." } },
+  { id: 3, precio: 11.90, f: "luna",    c: "#d9902a", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqZUH7JMaIEWgoofF8ZbWlXcxFS5XNso-zXGAKqUZ2IjfBediRT0cg2Dpn&s=10",
+    n: { fr: "Empanadas vallecaucanas (x12)", es: "Empanadas vallecaucanas (x12)" },
+    d: { fr: "Chaussons de maïs dorés, à la garniture savoureuse.", es: "Empanadas de maíz doradas, con relleno sabroso." } },
+  { id: 4, precio: 6.90,  f: "rosca",   c: "#eab84a", best: 1, img: "https://cdn.colombia.com/gastronomia/2011/08/05/pandebono-1638.gif",
+    n: { fr: "Pandebono (x8)", es: "Pandebono (x8)" },
+    d: { fr: "Petits pains moelleux au fromage et à l’amidon de manioc.", es: "Panecillos suaves de queso y almidón de yuca." } },
+  { id: 5, precio: 7.50,  f: "redonda", c: "#e2a23b", img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA9uKiWWGJSMwvwlKamiErVPns9BFG1QsLVfgAfMf18RQOw21DJFM-jJFq&s=10",
+    n: { fr: "Buñuelos (x12)", es: "Buñuelos (x12)" },
+    d: { fr: "Beignets de fromage croustillants dehors, moelleux dedans.", es: "Buñuelos de queso crocantes por fuera y suaves por dentro." } }
+];
+
+// ===== Textos (francés primero, español alternativo) =====
+const T = {
+ fr: { tag:"Arepas de Colombie", n1:"Accueil", n2:"Produits", n3:"Notre histoire", n4:"Contact", buy:"Commander",
+  badge:"Fabriqué en Colombie · Livré en France", h1:"L’authentique arepa colombienne, enfin chez vous",
+  sl:"Des masas de maïs faites main, dorées et fondantes, comme dans les rues de Bogotá.",
+  c1:"Découvrir nos produits", c2:"Notre histoire", pt:"Nos produits vedettes", ps:"Cinq classiques de la cuisine colombienne, à réchauffer en quelques minutes.",
+  add:"Ajouter au panier", best:"Coup de cœur",
+  promo:"−10 % sur votre première commande avec le code BIENVENUE · Livraison offerte dès 39 €",
+  ht:"Notre histoire", hp:"Tout commence dans une cuisine colombienne, où le maïs se travaille à la main depuis des générations. Nous avons réuni ces recettes de famille pour les faire découvrir aux tables françaises, avec le même soin et la même générosité.",
+  k1:"Façonné à la main", k2:"Recettes de famille", k3:"Cuisson traditionnelle", hq:"Un savoir-faire artisanal, du maïs à votre assiette.",
+  bt:"Pourquoi choisir nos produits", b1t:"Origine colombienne", b1p:"Des recettes authentiques, venues du pays du café et du maïs.",
+  b2t:"Prêts en quelques minutes", b2p:"À réchauffer à la poêle, au four ou au grille-pain.", b3t:"Livraison en France", b3p:"Une expédition soignée pour que tout arrive en parfait état.",
+  tt:"Ils en parlent", t1:"« Croustillantes dehors, moelleuses dedans : mes enfants en redemandent. »", t2:"« Le pandebono m’a rappelé mon voyage à Medellín. Un vrai coup de cœur. »", t3:"« Parfait pour un brunch entre amis, avec un bon fromage. »",
+  ft:"Questions fréquentes", fq1:"Comment préparer les arepas ?", fa1:"À la poêle ou au four, 3 à 4 minutes de chaque côté, puis garnissez de beurre ou de fromage.",
+  fq2:"Livrez-vous partout en France ?", fa2:"Oui, nous livrons en France métropolitaine.", fq3:"Puis-je payer en ligne ?", fa3:"Le paiement en ligne arrive bientôt : pour l’instant, cette boutique fonctionne en mode démonstration.",
+  cp:"Une question ? Écrivez-nous, nous répondons avec plaisir.", so:"Suivez-nous", pol:"Informations", p1:"Livraison et retours", p2:"Conditions de vente", p3:"Confidentialité",
+  x1:"Livraison en France métropolitaine. Retour accepté pour tout produit endommagé à la réception.", x2:"Les prix sont indiqués en euros, toutes taxes comprises. Conditions complètes à venir.", x3:"Nous ne collectons que les données nécessaires au traitement de votre commande.",
+  orig:"Produits de Colombie 🇨🇴", cart:"Mon panier", empty:"Votre panier est vide. Choisissez un produit du catalogue.", total:"Total", clear:"Vider le panier", fin:"Finaliser la commande",
+  m0:"Votre panier est déjà vide.", m1:"Panier vidé. À bientôt pour plus d’arepas !", m2:"Ajoutez au moins un produit pour commander.",
+  ok:"Merci pour votre commande chez Tienda de Juan Dotor !\nTotal : ", ok2:"\nBon appétit avec vos arepas !", unit:"produits" },
+ es: { tag:"Arepas de Colombia", n1:"Inicio", n2:"Productos", n3:"Nuestra historia", n4:"Contacto", buy:"Comprar",
+  badge:"Hecho en Colombia · Entrega en Francia", h1:"La auténtica arepa colombiana, por fin en tu casa",
+  sl:"Masas de maíz hechas a mano, doradas y suaves, como en las calles de Bogotá.",
+  c1:"Ver nuestros productos", c2:"Nuestra historia", pt:"Nuestros productos destacados", ps:"Cinco clásicos de la cocina colombiana, listos en pocos minutos.",
+  add:"Agregar al carrito", best:"Favorito",
+  promo:"−10 % en tu primer pedido con el código BIENVENUE · Envío gratis desde 39 €",
+  ht:"Nuestra historia", hp:"Todo empieza en una cocina colombiana, donde el maíz se trabaja a mano desde hace generaciones. Reunimos estas recetas de familia para llevarlas a las mesas francesas, con el mismo cuidado y la misma generosidad.",
+  k1:"Hecho a mano", k2:"Recetas de familia", k3:"Cocción tradicional", hq:"Un saber hacer artesanal, del maíz a tu plato.",
+  bt:"Por qué elegir nuestros productos", b1t:"Origen colombiano", b1p:"Recetas auténticas del país del café y del maíz.",
+  b2t:"Listos en pocos minutos", b2p:"Se calientan en sartén, horno o tostadora.", b3t:"Envío a Francia", b3p:"Un envío cuidado para que todo llegue en perfecto estado.",
+  tt:"Lo que dicen", t1:"«Crocantes por fuera, suaves por dentro: mis hijos piden más.»", t2:"«El pandebono me recordó mi viaje a Medellín. Un verdadero favorito.»", t3:"«Perfecto para un brunch con amigos, con un buen queso.»",
+  ft:"Preguntas frecuentes", fq1:"¿Cómo preparo las arepas?", fa1:"En sartén o al horno, de 3 a 4 minutos por lado; luego añade mantequilla o queso.",
+  fq2:"¿Envían a toda Francia?", fa2:"Sí, enviamos a la Francia metropolitana.", fq3:"¿Puedo pagar en línea?", fa3:"El pago en línea llegará pronto: por ahora esta tienda funciona en modo demostración.",
+  cp:"¿Tienes una pregunta? Escríbenos, con gusto respondemos.", so:"Síguenos", pol:"Información", p1:"Envíos y devoluciones", p2:"Condiciones de venta", p3:"Privacidad",
+  x1:"Envío a la Francia metropolitana. Se acepta la devolución de productos dañados al recibirlos.", x2:"Los precios se muestran en euros, impuestos incluidos. Condiciones completas próximamente.", x3:"Solo recopilamos los datos necesarios para procesar tu pedido.",
+  orig:"Productos de Colombia 🇨🇴", cart:"Mi carrito", empty:"Tu carrito está vacío. Elige un producto del catálogo.", total:"Total", clear:"Vaciar carrito", fin:"Finalizar compra",
+  m0:"Tu carrito ya está vacío.", m1:"Carrito vaciado. ¡Vuelve pronto por más arepas!", m2:"Agrega al menos un producto para finalizar.",
+  ok:"¡Gracias por tu compra en Tienda de Juan Dotor!\nTotal: ", ok2:"\n¡Buen provecho con tus arepas!", unit:"productos" }
+};
+
+let lang = "fr";
+try { lang = localStorage.getItem("lang") || "fr"; } catch (e) {}
+const carrito = {};
+const $ = id => document.getElementById(id);
+const eur = n => new Intl.NumberFormat(lang === "fr" ? "fr-FR" : "es-ES", { style: "currency", currency: "EUR" }).format(n);
+
+let temporizador;
+function avisar(txt) {
+  $("mensaje").textContent = txt;
+  clearTimeout(temporizador);
+  temporizador = setTimeout(() => { $("mensaje").textContent = ""; }, 3500);
+}
+
+// Si una foto no carga, se muestra la masa dibujada con CSS
+function fallo(img) {
+  const s = document.createElement("span");
+  s.className = "masa masa--" + img.dataset.f;
+  s.style.setProperty("--c2", img.dataset.c);
+  img.replaceWith(s);
+}
+
+function pintarCatalogo() {
+  $("catalogo").innerHTML = productos.map(p => {
+    return `<article class="card">
+      <div class="card__f">${p.best ? `<span class="pill">${T[lang].best}</span>` : ""}
+        <img src="${p.img}" alt="${p.n[lang]}" width="400" height="300" loading="lazy" decoding="async"
+          data-f="${p.f}" data-c="${p.c}" onerror="fallo(this)"></div>
+      <div class="card__b"><h3>${p.n[lang]}</h3><p>${p.d[lang]}</p>
+        <div class="card__p"><strong>${eur(p.precio)}</strong>
+        <button type="button" class="b" data-agregar="${p.id}">${T[lang].add}</button></div></div></article>`;
+  }).join("");
+}
+
+function pintarCarrito() {
+  let total = 0, cantidad = 0;
+  $("lista-carrito").innerHTML = "";
+  productos.forEach(p => {
+    const c = carrito[p.id];
+    if (!c) return;
+    total += p.precio * c; cantidad += c;
+    $("lista-carrito").insertAdjacentHTML("beforeend", `<li class="item">
+      <span>${p.n[lang]}</span><span class="item__p">${eur(p.precio * c)}</span>
+      <span class="q"><button type="button" data-menos="${p.id}" aria-label="−">−</button><span>${c}</span><button type="button" data-mas="${p.id}" aria-label="+">+</button></span></li>`);
+  });
+  $("vacio").hidden = cantidad > 0;
+  $("total").textContent = eur(total);
+  $("contador").textContent = cantidad;
+  $("contador").title = cantidad + " " + T[lang].unit;
+}
+
+function setLang(l) {
+  lang = l;
+  try { localStorage.setItem("lang", l); } catch (e) {}
+  document.documentElement.lang = l;
+  document.querySelectorAll("[data-i]").forEach(el => { el.textContent = T[l][el.dataset.i]; });
+  document.querySelectorAll("[data-lang]").forEach(b => b.setAttribute("aria-pressed", b.dataset.lang === l));
+  pintarCatalogo(); pintarCarrito();
+}
+
+const shell = $("shell");
+const abrir = () => { shell.classList.add("open"); $("cerrar").focus(); };
+const cerrar = () => shell.classList.remove("open");
+$("abrir").addEventListener("click", abrir);
+$("cerrar").addEventListener("click", cerrar);
+$("velo").addEventListener("click", cerrar);
+document.addEventListener("keydown", e => { if (e.key === "Escape") cerrar(); });
+
+$("burger").addEventListener("click", () => {
+  const on = $("nav").classList.toggle("on");
+  $("burger").setAttribute("aria-expanded", on);
+});
+$("nav").addEventListener("click", e => { if (e.target.tagName === "A") { $("nav").classList.remove("on"); $("burger").setAttribute("aria-expanded", "false"); } });
+
+document.addEventListener("click", e => {
+  const t = e.target.closest("button, a");
+  if (!t) return;
+  const d = t.dataset;
+  if (d.lang) setLang(d.lang);
+  else if (d.agregar || d.mas) { const id = d.agregar || d.mas; carrito[id] = (carrito[id] || 0) + 1; pintarCarrito(); if (d.agregar) avisar("✓ " + productos.find(p => p.id == id).n[lang]); }
+  else if (d.menos) { carrito[d.menos]--; if (carrito[d.menos] <= 0) delete carrito[d.menos]; pintarCarrito(); }
+  else if (d.pol) { e.preventDefault(); $("dlg-t").textContent = T[lang]["p" + d.pol]; $("dlg-p").textContent = T[lang]["x" + d.pol]; $("dlg").showModal(); }
+});
+$("dlg-x").addEventListener("click", () => $("dlg").close());
+
+$("vaciar").addEventListener("click", () => {
+  if (!Object.keys(carrito).length) { avisar(T[lang].m0); return; }
+  Object.keys(carrito).forEach(id => delete carrito[id]);
+  pintarCarrito(); avisar(T[lang].m1);
+});
+$("finalizar").addEventListener("click", () => {
+  if (!Object.keys(carrito).length) { avisar(T[lang].m2); return; }
+  alert(T[lang].ok + $("total").textContent + T[lang].ok2);
+  Object.keys(carrito).forEach(id => delete carrito[id]);
+  pintarCarrito(); cerrar();
+});
+
+setLang(lang);
+</script>
+</body>
+</html>
